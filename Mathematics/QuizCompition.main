@@ -1,0 +1,66 @@
+import java.util.*;
+public class Main 
+{ 	
+    public static void main(String[] args)
+    { 	    
+    	Scanner obj = new Scanner(System.in); 		 	
+        HashMap<Integer,Integer> h1 = new HashMap<Integer,Integer>(); 	
+        
+        ArrayList<Integer> v1 = new ArrayList<>(); 		 	
+        int n = obj.nextInt(); 		
+        int[] arr = new int[n]; 		
+        int[] ans = new int[n];	 		
+        	
+        for(int i=0;i<n;i++) 		
+        { 		    
+            int x = obj.nextInt(); 		    
+            arr[i] = x; 		
+        } 		
+        int h = obj.nextInt(); 		
+         		
+        for(int i=0;i<n;i++) 		
+        { 		    
+            h1.put(arr[i],i); 		    
+            ans[i] = -1; 		
+        } 		
+        int m =0; 		
+        int temp; 		
+        for(int i=0;i<n-h+1;i++) 		
+        { 		    
+            v1.clear();             
+            v1.add(arr[i]);             
+            v1.add(arr[i+1]);             
+            v1.add(arr[i+2]);             
+            for(int j=i+3;j<=n;j++)             
+            {                 
+                temp = 0;                 
+                for(int key : h1.keySet())                 
+                {                     
+                    
+                    if(v1.contains(key))                         
+                    continue;                    
+                    else                    
+                    {                         
+                        temp = 1;                         
+                        break;                     
+                    }                 
+                }                 
+                          
+                if(temp == 1)                     
+                    v1.add(arr[j]);                
+                else                
+                {                     
+                    int s = v1.size();                     
+                    ans[m] = s;                     
+                    m = m+1;                     
+                    break;                 
+                }             
+            } 		
+        } 		
+        for(int i=0;i<n;i++) 	
+        {             
+            System.out.print(ans[i]+" "); 		
+        } 	
+    } 
+}
+     
