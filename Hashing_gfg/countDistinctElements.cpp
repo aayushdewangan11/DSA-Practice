@@ -2,14 +2,17 @@
 using namespace std;
 
 int distinctElements(int arr[], int n){
-    int count = 0;
-    sort(arr, arr+n);
-    for(int i = 0; i<n; i++){
-        if(arr[i]== arr[i+1]){
-            count++;
-        }
+    set<int>s;
+    for(int i =0; i<n; i++){
+        s.insert(arr[i]);
     }
-    return n-count;
+
+    // int count =0;
+    // for(auto a : s){
+    //     count++;
+    // }
+    // return count;
+    return s.size();
 }
 
 int main(){
