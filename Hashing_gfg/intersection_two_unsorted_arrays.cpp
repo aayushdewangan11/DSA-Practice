@@ -10,12 +10,11 @@ void intersection(int a[], int m , int b[], int n){
     //     }
     // }
 
-    map<int, int> m1, m2;
+    unordered_set<int> s(b, b+n);
     for(int i =0; i<m; i++){
-        m1[a[i]]++;
-    }
-    for(int j =0; j<n; j++){
-        m2[b[j]]++;
+        if(s.find(a[i]) != s.end()){
+            cout<<a[i]<<" ";
+        }
     }
 
          
