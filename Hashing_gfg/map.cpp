@@ -8,13 +8,7 @@ int  main(){
         mp[arr[i]]++;
     }
 
-    for(auto it = mp.begin(); it != mp.end(); it++){
-        cout<<it->first<<" "<<it->second<<endl;
-    }
-    cout<<endl;
     for(auto it : mp){
         cout<<it.first<<" "<<it.second<<endl;
     }
-
-
 }
