@@ -41,7 +41,7 @@ Node* deletion(Node* root , int x){
             delete root;
             return temp;
         }
-
+ 
         else {
             Node * succ = getSuccessor(root);
             root->key = succ->key;
