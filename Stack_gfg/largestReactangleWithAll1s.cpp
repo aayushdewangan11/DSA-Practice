@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int largestArea(int arr[], int n){
+int largestArea(int arr[]){
     int res =0;
     stack<int> s;
 
@@ -24,13 +24,15 @@ int largestArea(int arr[], int n){
 
 }
 
+int largestRectangle( int a[]c[])
+
 int main(){
-    int n;
-    cin>>n;
-    int arr[n];
-    for(int i = 0; i<n; i++){
-        cin>>arr[i];
-    }
-    cout<<largestArea(arr, n);
+    int A[][C] = {
+        { 0, 1, 1, 0 },
+        { 1, 1, 1, 1 },
+        { 1, 1, 1, 1 },
+        { 1, 1, 0, 0 },
+    };
+    cout<<largestRectangle(A);
 
 }
