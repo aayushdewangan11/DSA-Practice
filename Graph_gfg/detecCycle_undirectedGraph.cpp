@@ -23,7 +23,7 @@ bool DFS(vector<int> adj[], int v){
 
     for(int i=0; i<v; i++){
         if(visited[i] == false){
-            if(DFSRec(adj, i, visited, -1)== false){
+            if(DFSRec(adj, i, visited, -1) == false){
                 return true;
             }
         }
