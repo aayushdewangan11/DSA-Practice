@@ -1,40 +1,25 @@
 #include<bits/stdc++.h>
+#define     Copy_maris_nah      int main()
+#define     Okay_bye            return 0
 using namespace std;
 
-void swap_int(int *a , int *b)
+Copy_maris_nah
 {
-	int temp = *a ;
-	*a = *b ;
-	*b = temp ;
-}
+    int t;
+    long long int a,b,n,s,sum;
+    cin>>t;
+    while(t--)
+    {
+        sum=0;
+        cin>>a>>b>>n>>s;
 
-int solve (int testcase)
-{
-	unsigned long long a , b , n , s ;
-	cin >> a >> b >> n >> s ;
-	if ((a*n + b) < s)
-	{
-		cout << "NO"<<endl;
-		return 0 ;
-	}
-	int x = s / n ;
-	int y = s % n ;
-	if (y > b)
-	{
-		cout << "NO"<<endl;
-		return 0 ;
-	}
-	else
-	{
-		cout << "YES"<<endl;
-	}
-}
+        long long int d = s / n;
+		d = min(d, a);
 
-int main()
-{ 
-	int t = 1 ;
-	cin>>t;
-	while (t--) 
-	  solve (1) ;
-	return 0 ;
+		if (s - n * d <= b) {
+			cout << "YES" << endl;
+		} else {
+			cout << "NO" << endl;
+		}
+    }
 }
