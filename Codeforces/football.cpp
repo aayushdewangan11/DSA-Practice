@@ -1,22 +1,31 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <string>
+
 using namespace std;
 
-int main(){
-    string s1;
-    cin>>s1;
-    int condition = 1;
-    for(int i=1; i<=s1.length(); i++){
-        if(s1[i] == s1[i-1]){
-            condition++;
-            if(condition==7){
-                cout<<"YES"<<endl;
+int main()
+{
+    string s;
+    cin >> s;
+
+    int contiguous = 1;
+    for (size_t i = 1; i < s.length(); ++i)
+    {
+        if (s[i] == s[i - 1])
+        {
+            contiguous += 1;
+            if (contiguous == 7)
+            {
+                cout << "YES" << endl;
                 return 0;
             }
-        }else{
-            condition=0;
         }
-        
+        else
+        {
+            contiguous = 1;
+        }
     }
-    cout<<"NO"<<endl;
+
+    cout << "NO" << endl;
     return 0;
 }
