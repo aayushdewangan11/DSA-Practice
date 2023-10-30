@@ -1,26 +1,29 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
 
-int main(){
-    int n;
-    cin>>n;
-    int h,m;
-    int arr[n];
-    for (int i = 0; i<n; i++){
-        cin>>h>>m;
-        int time = h + m;
-        cin>>arr[time];
-    }
-    int same = 0;
-    sort(arr, arr+n);
-    for (int i = 1; i<=n; i++){
-        if(arr[i]==arr[i-1]){
-            same++;
+int main()
+{
+    int n, h, m, h0, m0, c(1), cash(1);
+    scanf("%d", &n);
+    scanf("%d%d", &h0, &m0);
+
+    while (--n)
+    {
+        scanf("%d%d", &h, &m);
+        if (h == h0 && m == m0)
+        {
+            c += 1;
+            if (c > cash)
+            {
+                cash = c;
+            }
         }
+        else
+        {
+            c = 1;
+        }
+        h0 = h;
+        m0 = m;
     }
-    if(same == 0){
-        cout<<1;
-    }else {
-        cout<<same;
-    }
+    printf("%d\n", cash);
+    return 0;
 }
